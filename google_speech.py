@@ -1,4 +1,7 @@
 from google.cloud import vision, speech
+import os
+
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.path.abspath('./mounted/env.json')
 
 def transcribe_file_censored(speech_file, censored_words):
     """Transcribe the given audio file."""
@@ -32,4 +35,4 @@ def transcribe_file_censored(speech_file, censored_words):
                     response[i] = '*' * len(word)
         print(string.join(response))
 
-transcribe_file_censored('meeting.wav', ['it', 'as', 'he', 'she', 'paper', 'round', 'plan', 'act'])
+transcribe_file_censored('dizzee.wav', ['it', 'as', 'he', 'she', 'paper', 'round', 'plan', 'act'])
